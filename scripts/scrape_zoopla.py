@@ -70,7 +70,7 @@ class ZooplaApi(object):
             # wait until the hour is up
             wait_til = self.hour_time + datetime.timedelta(hours=1)
             wait_for = (wait_til - datetime.datetime.now()).total_seconds()
-            logger.info("Exceeded per second limit. Sleeping for %d minutes...", int(wait_for / 60.))
+            logger.info("Exceeded per hour limit. Sleeping for %d minutes...", int(wait_for / 60.))
             time.sleep(wait_for)
 
     def property_listing(self, **params):
